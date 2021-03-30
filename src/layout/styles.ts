@@ -7,5 +7,5 @@ export const Container = styled.div`
     'Sidebar Content'
     'Player Player';
   grid-template-columns: 0.7fr 5fr;
-  grid-template-rows: 5vh 80vh 15vh;
+  grid-template-rows: 8vh 77vh 15vh;
 `;
