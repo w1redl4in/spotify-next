@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body, input, button {
-    /* font: 1rem 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+    font: 1rem 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.48;
   }
 
@@ -50,6 +50,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   a {
+    color: inherit;
     text-decoration: none;
     background: none;
     cursor: pointer;
