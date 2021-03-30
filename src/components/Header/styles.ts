@@ -69,3 +69,46 @@ export const LogInSignUp = styled.div`
     }
   }
 `;
+
+export const LoggedPanel = styled.div`
+  display: flex;
+
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+
+    font-size: ${({ theme }) => theme.fontSize.large};
+    font-weight: bold;
+    color: ${({ theme }) => theme.colors.white};
+
+    background: ${({ theme }) => theme.colors.darkGrey};
+    transition: all 0.2s;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.grey};
+
+      svg + svg {
+        color: ${({ theme }) => theme.colors.black};
+      }
+    }
+
+    svg {
+      width: 2.3rem;
+      height: 2.3rem;
+      color: ${({ theme }) => theme.colors.spotify};
+    }
+
+    svg + svg {
+      width: 1rem;
+      height: 1rem;
+      color: ${({ theme }) => theme.colors.white};
+    }
+  }
+`;
