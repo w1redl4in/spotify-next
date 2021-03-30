@@ -5,6 +5,6 @@ export const Container = styled.div`
   grid-template-areas:
     'Sidebar Content'
     'Player Player';
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 0.7fr 5fr;
   grid-template-rows: 85vh 15vh;
 `;
