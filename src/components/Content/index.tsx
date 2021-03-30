@@ -17,11 +17,13 @@ export const Content: React.FC = () => {
   const [categories, setCategories] = useState<ICategories>();
 
   const callFeaturedPlaylists = async () => {
-    setFeaturedPlaylists(await useFeaturedPlaylists(session?.accessToken));
+    setFeaturedPlaylists(
+      await useFeaturedPlaylists(session?.user.accessToken as string)
+    );
   };
 
   const callCategories = async () => {
-    setCategories(await useCategories(session?.accessToken));
+    setCategories(await useCategories(session?.user.accessToken as string));
   };
 
   useEffect(() => {
@@ -31,24 +33,26 @@ export const Content: React.FC = () => {
 
   return (
     <ContentContainer>
-      <h1>{featuredPlaylists?.message}</h1>
-      <Playlists>
-        {featuredPlaylists?.playlists?.items.map((item) => (
-          <div>
-            <img src={item.images[0].url} alt="images" />
-            <h2>{item.name}</h2>
-            <p>{item.owner.display_name}</p>
-          </div>
-        ))}
-      </Playlists>
-      <h1>Categorias</h1>
-      <Playlists>
-        {categories?.categories.items.map((item) => (
-          <Category>
-            <h2>{item.name}</h2>
-          </Category>
-        ))}
-      </Playlists>
+      <>
+        <h1>{featuredPlaylists?.message}</h1>
+        <Playlists>
+          {featuredPlaylists?.playlists?.items.map((item) => (
+            <div>
+              <img src={item.images[0].url} alt="images" />
+              <h2>{item.name}</h2>
+              <p>{item.owner.display_name}</p>
+            </div>
+          ))}
+        </Playlists>
+        {categories && <h1>Categorias</h1>}
+        <Playlists>
+          {categories?.categories.items.map((item) => (
+            <Category>
+              <h2>{item?.name}</h2>
+            </Category>
+          ))}
+        </Playlists>
+      </>
     </ContentContainer>
   );
 };
