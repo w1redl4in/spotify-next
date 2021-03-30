@@ -14,6 +14,7 @@ export default NextAuth({
       if (account) {
         token.id = account.id;
         token.accessToken = account.accessToken;
+        token.refresh_token = account.refresh_token;
       }
       return token;
     },
