@@ -18,12 +18,12 @@ export const Content: React.FC = () => {
 
   const callFeaturedPlaylists = async () => {
     setFeaturedPlaylists(
-      await useFeaturedPlaylists(session?.user.accessToken as string)
+      await useFeaturedPlaylists(session?.user?.accessToken as string)
     );
   };
 
   const callCategories = async () => {
-    setCategories(await useCategories(session?.user.accessToken as string));
+    setCategories(await useCategories(session?.user?.accessToken as string));
   };
 
   useEffect(() => {
