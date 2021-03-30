@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <ArrowsWrapper>
-        <button>
+        <button type="button">
           <MdKeyboardArrowLeft color="#B2B2B2" />
         </button>
         <button>
