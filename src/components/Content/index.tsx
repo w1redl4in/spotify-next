@@ -1,8 +1,10 @@
 import { useSession } from 'next-auth/client';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IFeaturedPlaylists } from '../../@types/featuredPlaylists';
-import { api } from '../../services/api';
-import { ContentContainer, Playlists } from './styles';
+import { useFeaturedPlaylists } from '../../hooks/featuredPlaylists';
+import { useCategories } from '../../hooks/categories';
+import { ContentContainer, Playlists, Category } from './styles';
+import { ICategories } from '../../@types/categories';
 
 export const Content: React.FC = () => {
   const [session] = useSession();
@@ -12,21 +14,19 @@ export const Content: React.FC = () => {
     setFeaturedPlaylists,
   ] = useState<IFeaturedPlaylists>();
 
-  const handleFeaturedPlaylists = useCallback(async () => {
-    try {
-      const response = await api.get('browse/featured-playlists', {
-        headers: {
-          Authorization: session?.accessToken,
-        },
-      });
-      setFeaturedPlaylists(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, []);
+  const [categories, setCategories] = useState<ICategories>();
+
+  const callFeaturedPlaylists = async () => {
+    setFeaturedPlaylists(await useFeaturedPlaylists(session?.accessToken));
+  };
+
+  const callCategories = async () => {
+    setCategories(await useCategories(session?.accessToken));
+  };
 
   useEffect(() => {
-    handleFeaturedPlaylists();
+    callFeaturedPlaylists();
+    callCategories();
   }, []);
 
   return (
@@ -39,6 +39,14 @@ export const Content: React.FC = () => {
             <h2>{item.name}</h2>
             <p>{item.owner.display_name}</p>
           </div>
+        ))}
+      </Playlists>
+      <h1>Categorias</h1>
+      <Playlists>
+        {categories?.categories.items.map((item) => (
+          <Category>
+            <h2>{item.name}</h2>
+          </Category>
         ))}
       </Playlists>
     </ContentContainer>
