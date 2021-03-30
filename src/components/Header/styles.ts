@@ -75,6 +75,8 @@ export const LoggedPanel = styled.div`
 
   align-items: center;
 
+  margin-right: 1rem;
+
   button {
     display: flex;
     align-items: center;
