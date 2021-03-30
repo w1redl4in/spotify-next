@@ -8,21 +8,29 @@ export const ContentContainer = styled.main`
     color: ${({ theme }) => theme.colors.white};
     margin: 1rem;
   }
+
+  max-height: 77vh;
+  overflow-y: auto;
 `;
 
 export const Playlists = styled.section`
   display: flex;
+  flex-wrap: wrap;
 
   > div {
-    max-width: 10rem;
+    width: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
     padding: 0.8rem;
     margin: 0.5rem 1rem;
     border-radius: 0.5rem;
     background: ${({ theme }) => theme.colors.someGrey};
+
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     transition: transform 0.2s;
 
@@ -48,5 +56,40 @@ export const Playlists = styled.section`
     width: 8rem;
     height: 8rem;
     border-radius: 1rem;
+
+    @media (max-width: 1600px) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+`;
+
+export const Category = styled.span`
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+
+  margin: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${({ theme }) => theme.colors.someGrey};
+  color: ${({ theme }) => theme.colors.grey99};
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  text-align: center;
+
+  transition: all 0.2s;
+
+  h2 {
+    padding: 0 1.5rem;
+  }
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.colors.spotify};
+    color: ${({ theme }) => theme.colors.white};
+    transform: scale(1.1);
+    cursor: pointer;
   }
 `;
