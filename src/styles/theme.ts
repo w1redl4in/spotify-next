@@ -6,6 +6,8 @@ export const theme = {
     lightGrey: '#282828',
     lighterGrey: '#B2B2B2',
     someGrey: '#181818',
+    anotherGrey: '#121212',
+    grey99: '#B3B3B3',
     white: '#FFFFFF',
     spotify: '#1ED760',
   },
