@@ -33,7 +33,7 @@ export const NavItems = styled.div`
   height: 8rem;
   margin-top: 1rem;
 
-  a {
+  span {
     display: flex;
     align-items: center;
     font-size: ${({ theme }) => theme.fontSize.medium};
@@ -51,6 +51,7 @@ export const NavItems = styled.div`
 
     &:hover {
       color: ${({ theme }) => theme.colors.white};
+      cursor: pointer;
     }
 
     svg {

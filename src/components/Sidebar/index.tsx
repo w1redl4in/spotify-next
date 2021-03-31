@@ -20,9 +20,9 @@ export const Sidebar: React.FC = () => {
         </h1>
         <NavItems>
           {Object.entries(NAVBAR1).map(([key, value]) => (
-            <a href="" key={key} className={value.className}>
+            <span key={key} className={value.className}>
               {value.icon} {key}
-            </a>
+            </span>
           ))}
         </NavItems>
         <AdditionalInfo>
