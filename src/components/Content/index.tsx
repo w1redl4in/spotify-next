@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { IFeaturedPlaylists } from '../../@types/featuredPlaylists';
 import { useFeaturedPlaylists } from '../../hooks/featuredPlaylists';
 import { useCategories } from '../../hooks/categories';
-import { ContentContainer, Playlists, Category } from './styles';
+import { ContentContainer, ItemsWrapper, Category } from './styles';
 import { ICategories } from '../../@types/categories';
 
 export const Content: React.FC = () => {
@@ -37,7 +37,7 @@ export const Content: React.FC = () => {
     <ContentContainer>
       <>
         <h1>{featuredPlaylists?.message}</h1>
-        <Playlists>
+        <ItemsWrapper>
           {featuredPlaylists?.playlists?.items.map((item) => (
             <div>
               <img src={item.images[0].url} alt="images" />
@@ -45,15 +45,15 @@ export const Content: React.FC = () => {
               <p>{item.owner.display_name}</p>
             </div>
           ))}
-        </Playlists>
+        </ItemsWrapper>
         {categories && <h1>Categorias</h1>}
-        <Playlists>
+        <ItemsWrapper>
           {categories?.categories.items.map((item) => (
             <Category>
               <h2>{item?.name}</h2>
             </Category>
           ))}
-        </Playlists>
+        </ItemsWrapper>
       </>
     </ContentContainer>
   );

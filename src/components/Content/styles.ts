@@ -13,7 +13,7 @@ export const ContentContainer = styled.main`
   overflow-y: auto;
 `;
 
-export const Playlists = styled.section`
+export const ItemsWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
 
