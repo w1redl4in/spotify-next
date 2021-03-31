@@ -1,14 +1,19 @@
 import { useSession } from 'next-auth/client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { IFeaturedPlaylists } from '../../@types/featuredPlaylists';
 import { useFeaturedPlaylists } from '../../hooks/featuredPlaylists';
 import { useCategories } from '../../hooks/categories';
-import { ContentContainer, ItemsWrapper, Category } from './styles';
+import { ContentContainer, ItemsWrapper, Category, PlayIcon } from './styles';
 import { ICategories } from '../../@types/categories';
-import React from 'react';
 
 export const Content: React.FC = () => {
   const [session] = useSession();
+
+  const [isHover, setIsHover] = useState('');
+
+  const handleHover = useCallback((name: string) => {
+    setIsHover(name);
+  }, []);
 
   const [
     featuredPlaylists,
@@ -40,7 +45,11 @@ export const Content: React.FC = () => {
         <h1>{featuredPlaylists?.message}</h1>
         <ItemsWrapper>
           {featuredPlaylists?.playlists?.items.map((item) => (
-            <div>
+            <div
+              onMouseEnter={() => handleHover(item.name)}
+              onMouseLeave={() => handleHover('')}
+            >
+              {isHover === item.name && <PlayIcon />}
               <img src={item.images[0].url} alt="images" />
               <h2>{item.name}</h2>
               <p>{item.owner.display_name}</p>
