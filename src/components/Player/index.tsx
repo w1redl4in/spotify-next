@@ -20,6 +20,7 @@ import { useSession } from 'next-auth/client';
 // import { useCurrentlyPlaying } from '../../hooks/Player/currentPlaying';
 import { useRecentlyPlayed } from '../../hooks/Player/recentlyPlayed';
 import { IRecentlyPlayed } from '../../@types/recentlyPlayed';
+import Skeleton from 'react-loading-skeleton';
 
 export const Player: React.FC = () => {
   const [session] = useSession();
@@ -50,10 +51,26 @@ export const Player: React.FC = () => {
   return (
     <PlayerContainer>
       <MusicInfo>
-        <img src={recentlyPlayed?.items[0].track.album.images[0].url} alt="" />
+        {!recentlyPlayed?.items.length ? (
+          <Skeleton height={80} width={80} />
+        ) : (
+          <img
+            src={recentlyPlayed?.items[0].track.album.images[0].url}
+            alt=""
+          />
+        )}
         <ArtistAndName>
-          <h1>{recentlyPlayed?.items[0].track.name}</h1>
-          <p>{recentlyPlayed?.items[0].track.artists[0].name}</p>
+          {!recentlyPlayed?.items.length ? (
+            <>
+              <Skeleton width={100} /> <br />
+              <Skeleton width={70} />
+            </>
+          ) : (
+            <>
+              <h1>{recentlyPlayed?.items[0].track.name}</h1>
+              <p>{recentlyPlayed?.items[0].track.artists[0].name}</p>
+            </>
+          )}
         </ArtistAndName>
         <Icons>
           <AiOutlineHeart />
