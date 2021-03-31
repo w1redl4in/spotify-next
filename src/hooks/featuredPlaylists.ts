@@ -1,7 +1,7 @@
 import { IFeaturedPlaylists } from '../@types/featuredPlaylists';
 import { api } from '../services/api';
 
-export async function useFeaturedPlaylists(accessToken: string | undefined) {
+export async function useFeaturedPlaylists(accessToken: string) {
   try {
     const response = await api.get<IFeaturedPlaylists>(
       'browse/featured-playlists?country=BR&locale=pt_BR',

@@ -17,19 +17,21 @@ export const Content: React.FC = () => {
   const [categories, setCategories] = useState<ICategories>();
 
   const callFeaturedPlaylists = async () => {
-    setFeaturedPlaylists(
-      await useFeaturedPlaylists(session?.accessToken as string)
-    );
+    session?.user &&
+      setFeaturedPlaylists(
+        await useFeaturedPlaylists(session.user.accessToken as string)
+      );
   };
 
   const callCategories = async () => {
-    setCategories(await useCategories(session?.accessToken as string));
+    session?.user &&
+      setCategories(await useCategories(session.user.accessToken as string));
   };
 
   useEffect(() => {
     callFeaturedPlaylists();
     callCategories();
-  }, []);
+  }, [session]);
 
   return (
     <ContentContainer>
