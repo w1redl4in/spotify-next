@@ -10,8 +10,7 @@
 ![App Screenshot](https://cdn.discordapp.com/attachments/689545226120986626/826903499887214632/unknown.png)
 
 <p align="center">
-  <a href="https://slick-studio-4fmbfszjc-w1redl4in.vercel.app/" target="_blank"> Demo on 
-    <img alt="vercel next" src="https://pbs.twimg.com/profile_images/1252525888710873088/CBm5_MB7_400x400.jpg">
+  <a href="https://slick-studio-4fmbfszjc-w1redl4in.vercel.app/" target="_blank">Demo
   </a>
 </p>
 
@@ -20,10 +19,10 @@
 - [Next.js](https://nextjs.org/)
 - [Next-Auth](https://next-auth.js.org/)
 - [Spotify-API](https://developer.spotify.com/)
+- [Vercel](https://vercel.com/)
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [styled-components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- 
 
 ---
 
