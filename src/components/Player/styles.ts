@@ -7,9 +7,9 @@ export const PlayerContainer = styled.section`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   > section {
     display: flex;
@@ -27,7 +27,15 @@ export const PlayerContainer = styled.section`
 
       input {
         margin: 0 1rem;
-        width: 50rem;
+        width: 40rem;
+
+        @media (max-width: 1600px) {
+          width: 35rem;
+        }
+
+        @media (max-width: 1400px) {
+          width: 25rem;
+        }
       }
     }
 
@@ -76,11 +84,18 @@ export const MusicInfo = styled.div`
 
   align-items: center;
 
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
 
   img {
     width: 5rem;
     height: 5rem;
+  }
+
+  @media (max-width: 1440px) {
+    img {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 `;
 
@@ -152,7 +167,6 @@ export const SoundInfo = styled.div`
     -webkit-appearance: none;
     width: 50%;
     background: transparent;
-    height: 100%;
     padding-bottom: 0.25rem;
     padding-left: 1rem;
 
