@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
       ) : (
         <LoggedPanel>
           <button onClick={() => signOut()}>
-            <BiUserCircle />
+            <img src={session.user.picture as string} alt="user image" />
             {session.user.name}
             <AiFillCloseCircle />
           </button>

@@ -45,9 +45,8 @@ export const LogInSignUp = styled.div`
     transition: all 0.2s;
 
     &:hover {
-      background: ${({ theme }) => theme.colors.white};
       transform: scale(1.1);
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 
@@ -92,22 +91,22 @@ export const LoggedPanel = styled.div`
     background: ${({ theme }) => theme.colors.grey700};
     transition: all 0.2s;
 
-    &:hover {
-      background: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.grey400};
+    img {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
 
-      svg + svg {
-        color: ${({ theme }) => theme.colors.black};
+    &:hover {
+      color: ${({ theme }) => theme.colors.white};
+      transform: scale(1.1);
+
+      svg {
+        color: ${({ theme }) => theme.colors.white};
       }
     }
 
     svg {
-      width: 2.3rem;
-      height: 2.3rem;
-      color: ${({ theme }) => theme.colors.spotify};
-    }
-
-    svg + svg {
       width: 1rem;
       height: 1rem;
       color: ${({ theme }) => theme.colors.white};
