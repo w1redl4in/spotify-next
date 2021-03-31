@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BiPlay } from 'react-icons/bi';
 
 export const ContentContainer = styled.main`
   grid-area: Content;
@@ -24,6 +25,8 @@ export const ItemsWrapper = styled.section`
     justify-content: flex-start;
     align-items: flex-start;
 
+    position: relative;
+
     padding: 0.8rem;
     margin: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -32,11 +35,11 @@ export const ItemsWrapper = styled.section`
     overflow: hidden;
     text-overflow: ellipsis;
 
-    transition: transform 0.2s;
+    transition: background 0.2s;
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.1);
+      background: ${({ theme }) => theme.colors.grey400};
     }
 
     h2 {
@@ -92,4 +95,52 @@ export const Category = styled.span`
     transform: scale(1.1);
     cursor: pointer;
   }
+`;
+
+// type IPlayProps = {
+//   isHover: string;
+// };
+
+export const PlayIcon = styled(BiPlay)`
+  @keyframes move {
+    from {
+      opacity: 0;
+      bottom: 6rem;
+    }
+    to {
+      opacity: 1;
+      bottom: 7rem;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    @keyframes move {
+      from {
+        opacity: 0;
+        bottom: 6rem;
+      }
+      to {
+        opacity: 1;
+        bottom: 7rem;
+      }
+    }
+
+    left: 3.5rem;
+
+    height: 2rem;
+    width: 2rem;
+  }
+
+  position: absolute;
+  bottom: 7rem;
+  left: 5.5rem;
+
+  animation: move 0.5s;
+
+  height: 3rem;
+  width: 3rem;
+  padding-left: 0.3rem;
+  background: ${({ theme }) => theme.colors.spotify};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
 `;

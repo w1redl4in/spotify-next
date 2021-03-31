@@ -24,7 +24,11 @@ export const Header: React.FC = () => {
 
       {!session ? (
         <LogInSignUp>
-          <button>SIGN UP</button>
+          <button>
+            <a href="https://www.spotify.com/br/signup/" target="_blank">
+              SIGN UP
+            </a>
+          </button>
           <button onClick={() => signIn('spotify')}>LOG IN</button>
         </LogInSignUp>
       ) : (

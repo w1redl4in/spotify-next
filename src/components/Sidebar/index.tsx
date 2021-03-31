@@ -35,7 +35,9 @@ export const Sidebar: React.FC = () => {
       </nav>
       <InstallAppLabel>
         <FiArrowDownCircle />
-        <span>Install App</span>
+        <a href="https://www.spotify.com/us/download/windows/" target="_blank">
+          Install App
+        </a>
       </InstallAppLabel>
     </SidebarContainer>
   );
