@@ -10,7 +10,7 @@
 ![App Screenshot](https://cdn.discordapp.com/attachments/689545226120986626/826903499887214632/unknown.png)
 
 <p align="center">
-  <a href="https://slick-studio-4fmbfszjc-w1redl4in.vercel.app/" target="_blank">Demo
+  <a href="https://slick-studio-4fmbfszjc-w1redl4in.vercel.app/" target="_blank">Demo on Vercel
   </a>
 </p>
 
