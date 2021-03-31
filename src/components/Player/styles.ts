@@ -10,6 +10,65 @@ export const PlayerContainer = styled.section`
   justify-content: space-between;
 
   padding: 0 2rem;
+
+  > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > span {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+
+      color: ${({ theme }) => theme.colors.grey100};
+      font-weight: bold;
+
+      input {
+        margin: 0 1rem;
+        width: 50rem;
+      }
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      svg.play {
+        width: 2rem;
+        height: 2rem;
+        background: ${({ theme }) => theme.colors.white};
+        border-radius: 50%;
+        color: ${({ theme }) => theme.colors.black};
+        padding-left: 0.2rem;
+        transition: all 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: ${({ theme }) => theme.colors.white};
+          background: ${({ theme }) => theme.colors.black};
+        }
+      }
+
+      svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        color: ${({ theme }) => theme.colors.grey200};
+        transition: all 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: ${({ theme }) => theme.colors.spotify};
+        }
+      }
+
+      svg + svg {
+        margin-left: 1rem;
+      }
+    }
+  }
 `;
 
 export const MusicInfo = styled.div`
@@ -52,15 +111,6 @@ export const ArtistAndName = styled.div`
   }
 `;
 
-export const Player = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  > div {
-    display: flex;
-  }
-`;
-
 export const Icons = styled.div`
   display: flex;
 
@@ -86,6 +136,12 @@ export const Icons = styled.div`
 export const SoundInfo = styled.div`
   svg {
     color: ${({ theme }) => theme.colors.white};
+    transition: all 0.2s;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.spotify};
+      cursor: pointer;
+    }
   }
 
   svg + svg {

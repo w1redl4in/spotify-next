@@ -6,7 +6,13 @@ import {
   SoundInfo,
 } from './styles';
 import { AiOutlineHeart, AiOutlineWallet } from 'react-icons/ai';
-import { BsMic, BsListOl, BsMusicPlayer, BsVolumeUp } from 'react-icons/bs';
+import {
+  BsMic,
+  BsListOl,
+  BsMusicPlayer,
+  BsVolumeUp,
+  BsArrowCounterclockwise,
+} from 'react-icons/bs';
 import { RiArrowLeftRightFill } from 'react-icons/ri';
 import { BiSkipPrevious, BiSkipNext, BiPlay } from 'react-icons/bi';
 
@@ -27,14 +33,20 @@ export const Player: React.FC = () => {
           <AiOutlineWallet />
         </Icons>
       </MusicInfo>
-      <Player>
+      <section>
         <div>
           <RiArrowLeftRightFill />
           <BiSkipPrevious />
-          <BiPlay />
+          <BiPlay className="play" />
           <BiSkipNext />
+          <BsArrowCounterclockwise />
         </div>
-      </Player>
+        <span>
+          0:00
+          <input type="range" id="vol" name="vol" min="0" max="50" />
+          5:15
+        </span>
+      </section>
       <SoundInfo>
         <BsMic />
         <BsListOl />
