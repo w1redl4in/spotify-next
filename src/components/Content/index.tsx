@@ -42,28 +42,36 @@ export const Content: React.FC = () => {
   return (
     <ContentContainer>
       <>
-        <h1>{featuredPlaylists?.message}</h1>
-        <ItemsWrapper>
-          {featuredPlaylists?.playlists?.items.map((item) => (
-            <div
-              onMouseEnter={() => handleHover(item.name)}
-              onMouseLeave={() => handleHover('')}
-            >
-              {isHover === item.name && <PlayIcon />}
-              <img src={item.images[0].url} alt="images" />
-              <h2>{item.name}</h2>
-              <p>{item.owner.display_name}</p>
-            </div>
-          ))}
-        </ItemsWrapper>
-        {categories && <h1>Categorias</h1>}
-        <ItemsWrapper>
-          {categories?.categories.items.map((item) => (
-            <Category>
-              <h2>{item?.name}</h2>
-            </Category>
-          ))}
-        </ItemsWrapper>
+        {session ? (
+          <>
+            <h1>{featuredPlaylists?.message}</h1>
+            <ItemsWrapper>
+              {featuredPlaylists?.playlists?.items.map((item) => (
+                <div
+                  onMouseEnter={() => handleHover(item.name)}
+                  onMouseLeave={() => handleHover('')}
+                >
+                  {isHover === item.name && <PlayIcon />}
+                  <img src={item.images[0].url} alt="images" />
+                  <h2>{item.name}</h2>
+                  <p>{item.owner.display_name}</p>
+                </div>
+              ))}
+            </ItemsWrapper>
+            {categories && <h1>Categorias</h1>}
+            <ItemsWrapper>
+              {categories?.categories.items.map((item) => (
+                <Category>
+                  <h2>{item?.name}</h2>
+                </Category>
+              ))}
+            </ItemsWrapper>
+          </>
+        ) : (
+          <>
+            <h1>Faça login para iniciar - Work in Progress</h1>
+          </>
+        )}
       </>
     </ContentContainer>
   );
