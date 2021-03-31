@@ -5,6 +5,7 @@ import { useFeaturedPlaylists } from '../../hooks/featuredPlaylists';
 import { useCategories } from '../../hooks/categories';
 import { ContentContainer, ItemsWrapper, Category } from './styles';
 import { ICategories } from '../../@types/categories';
+import React from 'react';
 
 export const Content: React.FC = () => {
   const [session] = useSession();
