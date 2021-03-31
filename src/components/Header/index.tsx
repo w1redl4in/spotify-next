@@ -6,7 +6,6 @@ import {
 } from './styles';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { BiUserCircle } from 'react-icons/bi';
 import { signIn, signOut, useSession } from 'next-auth/client';
 
 export const Header: React.FC = () => {
