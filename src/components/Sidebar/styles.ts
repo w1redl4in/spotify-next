@@ -11,7 +11,7 @@ export const SidebarContainer = styled.section`
   nav {
     height: 18rem;
     padding: 0.8rem 0;
-    color: ${({ theme }) => theme.colors.lighterGrey};
+    color: ${({ theme }) => theme.colors.grey200};
 
     h1 {
       display: flex;
@@ -44,7 +44,7 @@ export const NavItems = styled.div`
     transition: color 0.2s;
 
     &.active {
-      background: ${({ theme }) => theme.colors.grey};
+      background: ${({ theme }) => theme.colors.grey400};
       border-radius: 0.2rem;
       color: ${({ theme }) => theme.colors.white};
     }
@@ -66,7 +66,7 @@ export const AdditionalInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-top: 2rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey400};
 
   span {
     display: flex;
@@ -92,7 +92,7 @@ export const InstallAppLabel = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 2rem;
-  color: ${({ theme }) => theme.colors.lighterGrey};
+  color: ${({ theme }) => theme.colors.grey200};
   transition: color 0.2s;
 
   &:hover {

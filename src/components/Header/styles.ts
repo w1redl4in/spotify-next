@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
   grid-area: Header;
 
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.grey400};
 
   display: flex;
 
@@ -13,11 +13,11 @@ export const HeaderContainer = styled.header`
 export const ArrowsWrapper = styled.div`
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.grey400};
   margin-left: 1rem;
 
   button {
-    background: ${({ theme }) => theme.colors.darkGrey};
+    background: ${({ theme }) => theme.colors.grey700};
 
     border-radius: 50%;
     width: 2.5rem;
@@ -40,7 +40,7 @@ export const LogInSignUp = styled.div`
   align-items: center;
 
   button:first-child {
-    background: ${({ theme }) => theme.colors.grey};
+    background: ${({ theme }) => theme.colors.grey400};
     color: ${({ theme }) => theme.colors.white};
     transition: all 0.2s;
 
@@ -89,12 +89,12 @@ export const LoggedPanel = styled.div`
     font-weight: bold;
     color: ${({ theme }) => theme.colors.white};
 
-    background: ${({ theme }) => theme.colors.darkGrey};
+    background: ${({ theme }) => theme.colors.grey700};
     transition: all 0.2s;
 
     &:hover {
       background: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.grey};
+      color: ${({ theme }) => theme.colors.grey400};
 
       svg + svg {
         color: ${({ theme }) => theme.colors.black};

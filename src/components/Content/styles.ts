@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContentContainer = styled.main`
   grid-area: Content;
-  background: ${({ theme }) => theme.colors.anotherGrey};
+  background: ${({ theme }) => theme.colors.grey600};
 
   h1 {
     color: ${({ theme }) => theme.colors.white};
@@ -27,7 +27,7 @@ export const Playlists = styled.section`
     padding: 0.8rem;
     margin: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background: ${({ theme }) => theme.colors.someGrey};
+    background: ${({ theme }) => theme.colors.grey500};
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,7 +46,7 @@ export const Playlists = styled.section`
     }
 
     p {
-      color: ${({ theme }) => theme.colors.grey99};
+      color: ${({ theme }) => theme.colors.grey100};
       font-size: ${({ theme }) => theme.fontSize.medium};
       margin-top: 1rem;
     }
@@ -75,8 +75,8 @@ export const Category = styled.span`
   align-items: center;
   justify-content: center;
 
-  background: ${({ theme }) => theme.colors.someGrey};
-  color: ${({ theme }) => theme.colors.grey99};
+  background: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey100};
   font-size: ${({ theme }) => theme.fontSize.medium};
   text-align: center;
 
