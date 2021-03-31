@@ -17,6 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
             rel="stylesheet"
           />
+          <link
+            rel="shortcut icon"
+            href="/images/spotify-logo.png"
+            type="image/png"
+          />
         </Head>
         <GlobalStyles />
         <SkeletonTheme

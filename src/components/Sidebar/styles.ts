@@ -16,6 +16,7 @@ export const SidebarContainer = styled.section`
     h1 {
       display: flex;
       align-items: center;
+      padding-left: 1rem;
 
       &:hover {
         cursor: pointer;

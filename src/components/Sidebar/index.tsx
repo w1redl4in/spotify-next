@@ -14,8 +14,10 @@ export const Sidebar: React.FC = () => {
       <nav>
         <h1>
           <img
-            src="https://cdn.discordapp.com/attachments/263762535763673089/826307989384200192/unknown.png"
+            src="/images/spotify-header.png"
             alt="spotify logo"
+            width="130px"
+            height="40px"
           />
         </h1>
         <NavItems>
