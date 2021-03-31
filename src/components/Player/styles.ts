@@ -7,9 +7,9 @@ export const PlayerContainer = styled.section`
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
-  padding: 0 1rem;
+  padding: 0 2rem;
 
   > section {
     display: flex;
