@@ -55,8 +55,8 @@ export const PlayerContainer = styled.section`
 
         &:hover {
           cursor: pointer;
-          color: ${({ theme }) => theme.colors.white};
-          background: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.black};
+          transform: scale(1.15);
         }
       }
 
