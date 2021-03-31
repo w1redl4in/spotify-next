@@ -12,6 +12,19 @@ export const ContentContainer = styled.main`
 
   max-height: 77vh;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    transition: all 0.2s;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.grey400};
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.grey300};
+  }
 `;
 
 export const ItemsWrapper = styled.section`
@@ -96,10 +109,6 @@ export const Category = styled.span`
     cursor: pointer;
   }
 `;
-
-// type IPlayProps = {
-//   isHover: string;
-// };
 
 export const PlayIcon = styled(BiPlay)`
   @keyframes move {
